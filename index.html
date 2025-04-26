@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MiBanco</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Pantalla de carga -->
+  <div id="splash" class="pantalla">
+    <img src="https://www.svgrepo.com/show/336964/credit-card.svg" class="splash-logo" alt="Logo MiBanco">
+    <h1>MiBanco</h1>
+  </div>
+
+  <!-- Inicio de sesión -->
+  <div id="login" class="pantalla hidden">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="usuario" placeholder="Usuario" />
+    <input type="password" id="clave" placeholder="Contraseña" />
+    <label>
+      <input type="checkbox" id="rememberMe" /> Recordarme
+    </label>
+    <button onclick="iniciarSesion()">Entrar</button>
+    <p>¿No tienes cuenta? <a href="javascript:void(0)" onclick="mostrarRegistro()">Regístrate aquí</a></p>
+  </div>
+
+  <!-- Registro de usuario -->
+  <div id="registro" class="pantalla hidden">
+    <h2>Regístrate</h2>
+    <input type="text" id="newUser" placeholder="Nuevo Usuario" />
+    <input type="password" id="newPassword" placeholder="Nueva Contraseña" />
+    <button onclick="registrarUsuario()">Crear Cuenta</button>
+    <p>¿Ya tienes cuenta? <a href="javascript:void(0)" onclick="mostrarLogin()">Inicia sesión aquí</a></p>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" class="hidden">
+    <header>
+      <div class="logo">
+        <img src="https://www.svgrepo.com/show/336964/credit-card.svg" alt="Logo MiBanco" class="logo-icon" />
+        <span>MiBanco</span>
+      </div>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <nav id="menu" class="hidden">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Transferencias</a></li>
+        <li><a href="#">Movimientos</a></li>
+        <li><a href="#">Configuración</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="saldo">
+        <h2>Hola, usuario 👋</h2>
+        <p>Tu saldo actual es:</p>
+        <h1>$5,280.00</h1>
+      </section>
+
+      <section class="acciones">
+        <button onclick="mostrarMensaje('Transferencia iniciada')">💸 Transferir</button>
+        <button onclick="mostrarMensaje('Aquí están tus movimientos')">📊 Movimientos</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 MiBanco Fintech</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
